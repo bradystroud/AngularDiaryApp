@@ -1,15 +1,27 @@
-<div class="grid-container">
-    <div class="grid-item">
-        <div class="title">
-            Title: <input type="text" [formControl]="entryTitle">
+<div class="form-group">
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="title">
+                Title: <input type="text" [(ngModel)]="title">
+            </div>
         </div>
-    </div>
-    <div class="grid-item">
-        <div class="title">
-            Entry: <input matInput type="text" [formControl]="entryBody">
+        <div class="grid-item">
+            <div class="title">
+                Entry:
+                <textArea  (input)="body = $event.target.value" rows="5" cols="60"></textArea>
+                <!-- took me literally half a day to find the syntax to do this. https://stackoverflow.com/questions/37898080/get-user-input-from-textarea -->
+            </div>
         </div>
-    </div>
-    <div class="grid-item">
-        <button (click)="saveData()">Save</button>
+        <div class="grid-item">
+            <label for="moodName">How are you feeling?:</label>
+            <select [(ngModel)]="moodName" required>
+                <option *ngFor="let mood of moodList">
+                    {{mood.name}}
+                </option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <button (click)="saveData()">Save</button>
+        </div>
     </div>
 </div>
