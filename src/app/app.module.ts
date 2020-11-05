@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { AddEntryComponent } from './add-entry/add-entry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EntryViewComponent } from './entry-view/entry-view.component';
+import { EntryListComponent } from './entry-list/entry-list.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEntryComponent,
-    EntryViewComponent
+    EntryViewComponent,
+    EntryListComponent
   ],
   imports: [
     BrowserModule,

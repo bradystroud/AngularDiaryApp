@@ -8,8 +8,10 @@ import { Entry } from './entry';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const entries = [
-      new Entry(10, "City trip", "I went to the city today", 5),
-      new Entry(10, "What a day", "today was so flipping epic you dont even understand", 5)
+      new Entry(10, "City trip", "I had a bad day today. I am unhappy about the condition of my day. If i could rectify the day i would.", 1),
+      new Entry(10, "#BadDayLol", "Today was a bit boring", 3),
+      new Entry(10, "What a day", "today was so flipping epic you dont even understand", 5),
+      new Entry(10, "I dont wanna talk about it ok just leave me alone", "I dont wanna talk about it lmao", 0)
     ];
     return {entries};
   }

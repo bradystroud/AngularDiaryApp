@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Entry } from '../entry'
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, from } from 'rxjs';
-
+import { Entry } from '../entry';
 
 @Component({
   selector: 'app-entry-view',
@@ -11,21 +8,19 @@ import { Observable, of, from } from 'rxjs';
 })
 export class EntryViewComponent implements OnInit {
 
-  entry: Entry
-  private entriesURL = 'api/entries';  // URL to web api
-  entryList: Entry[];
+  @Input()
+  entry: Entry;
+  moodList = [false, false, false, false, false];
 
-  constructor(private http: HttpClient) { 
-    
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getEntries();  
-  }
-
-  getEntries(): Observable<Entry[]> {
-    this.http.get<Entry[]>(this.entriesURL).subscribe(entries => this.entryList = entries)
-    return this.http.get<Entry[]>(this.entriesURL)
+    console.log("Entry mood: " + this.entry.mood.toString())
+    for(let i = 0; i < this.entry.mood; i++) {
+      console.log(this.moodList[i])
+      this.moodList[i] = true;
+    }
+    console.log(this.moodList)
   }
 
 }

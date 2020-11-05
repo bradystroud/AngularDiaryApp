@@ -1,10 +1,17 @@
-<ul class="entryList">
-    <li *ngFor="let entry of entryList">
-        <div class="card">
-            <div class="container">
-                <h3>{{entry.heading}}</h3>
+<div class="card">
+    <div class="container">
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>{{entry.heading}}</h2>
                 {{entry.entry}}
             </div>
+            <div class="grid-item">
+                <div *ngFor="let star of moodList">
+                    <div *ngIf="star; else elseBlock"><img src="../../assets/black.svg" height="19px" alt="Mood stars"></div>
+                    <ng-template #elseBlock><img src="../../assets/outline.svg" height="15px" alt="Mood stars bad"></ng-template>
+                    
+                </div>
+            </div>
         </div>
-    </li>
-</ul>
+    </div>
+</div>
