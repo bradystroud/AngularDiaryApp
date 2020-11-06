@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
 import { AddEntryComponent } from './add-entry/add-entry.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EntryViewComponent } from './entry-view/entry-view.component';
-import { EntryListComponent } from './entry-list/entry-list.component'
+import { EntryListComponent } from './entry-list/entry-list.component';
+import { EditEntryComponent } from './edit-entry/edit-entry.component'
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EntryListComponent } from './entry-list/entry-list.component'
     AppComponent,
     AddEntryComponent,
     EntryViewComponent,
-    EntryListComponent
+    EntryListComponent,
+    EditEntryComponent
   ],
   imports: [
     BrowserModule,

@@ -10,11 +10,11 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-mat-slider {
-    color: coral;
-}
-
 .grid-container {
     display: grid;
     grid: 150px / auto auto;
+}
+
+.grid-item {
+    padding: 0px 20px;
 }

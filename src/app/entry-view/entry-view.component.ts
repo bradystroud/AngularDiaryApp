@@ -22,5 +22,8 @@ export class EntryViewComponent implements OnInit {
     }
     console.log(this.moodList)
   }
+  test () {
+    console.log('Yeah Boiiiiiiiiiiiiiiiiii');
+  }
 
 }

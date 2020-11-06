@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Entry } from '../entry'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { EntryListComponent } from '../entry-list/entry-list.component';
+import { EntryService } from './../entry.service';
 
 @Component({
   providers:[EntryListComponent],
@@ -14,6 +15,9 @@ import { EntryListComponent } from '../entry-list/entry-list.component';
 })
 export class AddEntryComponent implements OnInit {
   private entriesURL = 'api/entries';  // URL to web api
+
+  @Input()
+  entryList: Entry[];
 
   title = "What happended today?";
   entry: Entry;
@@ -31,7 +35,7 @@ export class AddEntryComponent implements OnInit {
   };
 
   body: string;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private entryService: EntryService) { }
 
   ngOnInit(): void {
   }
@@ -43,7 +47,9 @@ export class AddEntryComponent implements OnInit {
   saveData() {
     this.entry = new Entry(0, this.title, this.body, this.moodList.find(mood => mood.name === this.moodName).value);
     // I need to learn whats going on with that === and => thing/
-
+    this.postEntry().subscribe()
+    this.entryList.push(this.entry);
+    this.entryService.sendClickEvent();
   }
-  //So here i need to somehow 'refresh' the list of Entries in the EntryList component, the best way might be to refresh page whole.
+  //So here i need to somehow 'refresh' the list of Entries in the EntryList component, the best way might be to refresh page whole. 
 }

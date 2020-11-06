@@ -1,0 +1,8 @@
+.entryList {
+    list-style-type: none; /*Removes dot points*/
+}
+
+.entryList li {
+    padding: 10px 0px 0px 10px;
+}
+

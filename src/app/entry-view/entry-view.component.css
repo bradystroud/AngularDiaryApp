@@ -10,6 +10,16 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
+  .card:active {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
+    background: rgb(248, 248, 248);
+  }
+
+#container {
+  display: flex;
+ }
+
   /* Add some padding inside the card container */
 .container {
     padding: 16px 16px;

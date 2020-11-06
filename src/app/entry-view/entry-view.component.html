@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="test()">
     <div class="container">
         <div class="grid-container">
             <div class="grid-item">
@@ -6,11 +6,16 @@
                 {{entry.entry}}
             </div>
             <div class="grid-item">
-                <div *ngFor="let star of moodList">
-                    <div *ngIf="star; else elseBlock"><img src="../../assets/black.svg" height="19px" alt="Mood stars"></div>
-                    <ng-template #elseBlock><img src="../../assets/outline.svg" height="15px" alt="Mood stars bad"></ng-template>
-                    
-                </div>
+                <section id="container">
+                    <div *ngFor="let star of moodList">
+                        <div *ngIf="star; else elseBlock"><img src="../../assets/black.svg" height="19px"
+                                alt="Mood stars"></div>
+                        <ng-template #elseBlock><img src="../../assets/outline.svg" height="15px" alt="Mood stars bad">
+                        </ng-template>
+
+                    </div>
+                </section>
+
             </div>
         </div>
     </div>
