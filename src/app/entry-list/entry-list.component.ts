@@ -29,6 +29,7 @@ export class EntryListComponent implements OnInit {
     this.getEntries()
 
   }
+
   //TODO: Need a seperate component for each entry, then calculate the outline list ang the full star list for each 
 
   getEntries() {

@@ -11,6 +11,7 @@ export class EntryViewComponent implements OnInit {
   @Input()
   entry: Entry;
   moodList = [false, false, false, false, false];
+  showEdit: boolean = false;
 
   constructor() { }
 
@@ -23,7 +24,7 @@ export class EntryViewComponent implements OnInit {
     console.log(this.moodList)
   }
   test () {
-    console.log('Yeah Boiiiiiiiiiiiiiiiiii');
+    this.showEdit = !this.showEdit
   }
 
 }
