@@ -24,11 +24,11 @@ export class AddEntryComponent implements OnInit {
   moodName: string;
   retreiveEntries: Entry[];
   moodList = [
-    { name: "Great", value: 1 },
-    { name: "Good", value: 3 },
-    { name: "Fine", value: 4 },
-    { name: "Bad", value: 5 },
-    { name: "I wanna go home", value: 6 }
+    { name: "Great", value: 5 },
+    { name: "Good", value: 4 },
+    { name: "Fine", value: 3 },
+    { name: "Bad", value: 2 },
+    { name: "I wanna go home", value: 1 }
   ]
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
